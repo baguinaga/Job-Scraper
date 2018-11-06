@@ -28,5 +28,11 @@
   "bugs": {
     "url": "https://github.com/baguinaga/Job-Scraper/issues"
   },
-  "homepage": "https://github.com/baguinaga/Job-Scraper#readme"
+  "homepage": "https://github.com/baguinaga/Job-Scraper#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "mongojs": "^2.6.0"
+  }
 }
