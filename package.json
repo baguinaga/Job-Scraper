@@ -1,0 +1,32 @@
+{
+  "name": "job-scraper",
+  "version": "0.1.0",
+  "description": "A web scraper for popular job posting websites.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baguinaga/Job-Scraper.git"
+  },
+  "keywords": [
+    "web-scraper",
+    "scraper",
+    "jobs",
+    "node",
+    "cheerio",
+    "mongodb",
+    "mongojs",
+    "mongoose",
+    "axios",
+    "express"
+  ],
+  "author": "Billy Aguinaga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baguinaga/Job-Scraper/issues"
+  },
+  "homepage": "https://github.com/baguinaga/Job-Scraper#readme"
+}
