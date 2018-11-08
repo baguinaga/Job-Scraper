@@ -1,6 +1,6 @@
 // Dependencies
 const express = require("express");
-const mongojs = require("mongojs");
+const mongoose = require("mongoose");
 const axios = require("axios");
 const cheerio = require("cheerio");
 
@@ -9,12 +9,11 @@ const database_url = "job_posts";
 const collection = "indeed";
 
 const app = express();
-// const db = mongojs(database_url, collection);
+const db = require("./models");
 
-// Catching db errors
-// db.on("error", (error) => {
-//   console.log(error);
-// });
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
 
 app.get("/api/scrape", (req, res) => {
   axios
@@ -35,13 +34,16 @@ app.get("/api/scrape", (req, res) => {
       console.log(results);
       res.json(results);
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).send(err);
+    .catch(error => {
+      console.log(error);
+      res.status(500).send(error);
     });
-    
 });
 
 app.listen(3000, () => {
+  mongoose.connect(
+    "mongodb://localhost/Job-Scraper",
+    { useNewUrlParser: true }
+  );
   console.log("App is running on : http://localhost:3000");
 });
