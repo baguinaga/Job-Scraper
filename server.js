@@ -4,10 +4,8 @@ const mongoose = require("mongoose");
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-// database structure (temp)
-const database_url = "job_posts";
-const collection = "indeed";
-
+// Express and db
+const PORT = 3000;
 const app = express();
 const db = require("./models");
 
@@ -40,7 +38,7 @@ app.get("/api/scrape", (req, res) => {
     });
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   mongoose.connect(
     "mongodb://localhost/Job-Scraper",
     { useNewUrlParser: true }
